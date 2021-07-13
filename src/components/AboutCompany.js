@@ -46,7 +46,7 @@ const ColumnRight = styled.div`
   }
 `;
 
-const About = () => {
+const AboutCompany = () => {
   return (
     <SectionAbout>
       <Container>
@@ -94,4 +94,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutCompany;
