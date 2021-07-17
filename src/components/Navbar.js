@@ -1,13 +1,14 @@
-import React from "react";
-import styled, { css } from "styled-components/macro";
-
-import { Link } from "react-router-dom";
-import { menuData } from "../data/headerData";
-import { Button } from "./Button";
-
-import Bars from "../images/bars.svg";
+import React from 'react';
+import styled, { css } from 'styled-components/macro';
+import { Link } from 'react-router-dom';
+import menuData from '../data/header.json';
+import buttonText from '../data/button.json';
+import { LangContext } from '../App';
+import { Button } from './Button';
+import Bars from '../images/bars.svg';
 // import { FaBars } from "react-icons/fa";
-import logo from "../images/logo_header.png";
+import logo from '../images/logo_header.png';
+import LangSelect from './LangSelect';
 
 const Nav = styled.nav`
   height: 60px;
@@ -97,23 +98,34 @@ const NavBtn = styled.div`
   }
 `;
 
-const Navbar = ({ toggle }) => {
+const Languages = styled.div`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Navbar = ({ toggle, setLang }) => {
+  const lang = React.useContext(LangContext);
+
   return (
     <Nav>
       <Logo>
-        <LogoImg src={logo} alt={"logo"} />
+        <LogoImg src={logo} alt={'logo'} />
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
-        {menuData.map((item, index) => (
+        {menuData[lang].map((item, index) => (
           <NavMenuLinks to={item.link} key={index}>
             {item.title}
           </NavMenuLinks>
         ))}
       </NavMenu>
       <NavBtn>
-        <Button to="/contact">Contact Us</Button>
+        <Button to="/contact"> {buttonText[lang]}</Button>
       </NavBtn>
+      <Languages>
+        <LangSelect setLang={setLang} lang={lang} />
+      </Languages>
     </Nav>
   );
 };
