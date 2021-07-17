@@ -1,13 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-import { menuData } from "../data/headerData";
-import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import menuData from '../data/header.json';
+import buttonText from '../data/button.json';
+import { LangContext } from '../App';
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
+import LangSelect from './LangSelect';
 // import { FaTimes } from "react-icons/fa";
 
 const DropdownContainer = styled.div`
   position: fixed;
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   left: 0;
   width: 100%;
   height: 100%;
@@ -15,7 +18,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   background: #cd853f;
   transition: 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   z-index: 999;
 `;
 
@@ -62,7 +65,21 @@ const BtnWrap = styled.div`
   justify-content: center;
 `;
 
-const Dropdown = ({ isOpen, toggle }) => {
+const WrapLangSelect = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0 auto;
+`;
+
+const Dropdown = ({ isOpen, toggle, setLang }) => {
+  const lang = React.useContext(LangContext);
+
+  const handlerOnLangClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -71,15 +88,18 @@ const Dropdown = ({ isOpen, toggle }) => {
       </Icon>
       <DropdownWrapper>
         <DropdownMenu>
-          {menuData.map((item, index) => (
+          {menuData[lang].map((item, index) => (
             <DropdownLink to={item.link} key={index}>
               {item.title}
             </DropdownLink>
           ))}
+          <WrapLangSelect onClick={handlerOnLangClick}>
+            <LangSelect setLang={setLang} lang={lang} />
+          </WrapLangSelect>
         </DropdownMenu>
         <BtnWrap>
           <Button primary="true" round="true" big="true" to="./contact">
-            Contact Us
+            {buttonText[lang]}
           </Button>
         </BtnWrap>
       </DropdownWrapper>
