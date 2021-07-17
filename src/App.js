@@ -1,9 +1,14 @@
 import React from 'react';
 
-import GlobalStyle from './GlobalStyle';
-import Header from './components/Header';
-import Services from './components/Services';
-import About from './components/About';
+import GlobalStyle from "./GlobalStyle";
+import Header from "./components/Header";
+import Services from "./components/Services";
+import AboutCompany from "./components/AboutCompany";
+import AboutUs from "./components/AboutUs";
+import ResumePage from "./components/ResumePage";
+
+import { servicesData } from "./data/servicesData";
+import { teamData } from "./data/teamData";
 import { servicesData } from './data/servicesData';
 import { EN } from './constants';
 
@@ -23,7 +28,12 @@ function App() {
       <GlobalStyle />
       <Header setLang={setLang}/>
       <Services servicesData={servicesData} />
-      <About />
+      <AboutCompany />
+      <AboutUs />
+      {teamData.map((item, index) => (
+        <ResumePage key={index} employee={item} />
+      ))}
+    </>
     </LangContext.Provider>
   );
 }

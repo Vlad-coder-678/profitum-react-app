@@ -6,8 +6,7 @@ import { LangContext } from '../App';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import LangSelect from './LangSelect';
-// import { FaTimes } from "react-icons/fa";
-
+import { FaTimes } from "react-icons/fa";
 const DropdownContainer = styled.div`
   position: fixed;
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
@@ -31,9 +30,9 @@ const Icon = styled.div`
   cursor: pointer;
   outline: none;
 `;
-// const CloseIcon = styled(FaTimes)`
-//   color: #000d1a;
-// `;
+const CloseIcon = styled(FaTimes)`
+  color: #000d1a;
+`;
 const DropdownWrapper = styled.div``;
 const DropdownMenu = styled.div`
   display: grid;
@@ -83,8 +82,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
-        {/* <CloseIcon /> */}
-        Close
+        <CloseIcon />
       </Icon>
       <DropdownWrapper>
         <DropdownMenu>
