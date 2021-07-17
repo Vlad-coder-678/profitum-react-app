@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Navbar from "./Navbar";
-import Dropdown from "./Dropdown";
+import Navbar from './Navbar';
+import Dropdown from './Dropdown';
 
-const Header = () => {
+const Header = ({ setLang }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => {
@@ -12,8 +12,8 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar toggle={toggle} />
-      <Dropdown toggle={toggle} isOpen={isOpen} />
+      <Navbar toggle={toggle} setLang={setLang} />
+      <Dropdown toggle={toggle} isOpen={isOpen} setLang={setLang} />
     </header>
   );
 };
