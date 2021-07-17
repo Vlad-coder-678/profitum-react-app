@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { teamData } from "../data/teamData";
-import DropdownSlider from "./DropdownSlider";
 
 const SectionAboutUs = styled.section`
   padding: 1rem 2rem;
+  position: relative;
 `;
 
 const Title = styled.h2`
@@ -18,88 +18,80 @@ const Content = styled.div`
   padding: 1rem 2rem;
 `;
 
+const CardWrapper = styled.div`
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  margin: 1rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 40%;
+    background-color: #cd853f;
+    border-radius: 10px;
+    z-index: -1;
+  }
+`;
+
 const CardOfEmployee = styled.div`
-  flex-basis: 25%;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
-  margin: 1rem 2rem;
-  text-align: center;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.5),
-    0px 0px 10px 1px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  @media screen and (max-width: 768px) {
-    flex-basis: 45%;
-    padding: 0.5rem;
-    margin: 0.5rem;
-  }
-  h4 {
-    margin: 1rem 0rem;
-    line-height: 1.4;
+
+  h3 {
+    line-height: 40px;
+    font-size: 1.5rem;
+    color: #000d1a;
   }
   p {
-    margin: 1rem 0rem;
+    line-height: 40px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #fff;
   }
-`;
+  `;
 
 const WrapImg = styled.div`
-  width: 180px;
-  height: 250px;
+  width: 100%;
+  height: 350px;
+  margin: 1rem;
   img {
+    border-radius: 10px;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    @media screen and (max-width: 768px) {
-      width: 90%;
-      height: 90%;
-    }
   }
-  @media screen and (max-width: 768px) {
-    width: 120px;
-    height: 150px;
+
+  @media screen and(max-width: 768px) {
+    height: 300px;
   }
 `;
 
 const AboutUs = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [active, setActive] = React.useState(null);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const setCurr = (active) => {
-    setActive(active);
-  };
-
   return (
     <SectionAboutUs>
       <Title>Наша команда</Title>
       <Content>
         {teamData.map((employee, id) => (
-          <CardOfEmployee
-            onClick={() => {
-              setActive(id);
-              toggle();
-            }}
-          >
-            <WrapImg>
-              <img src={employee.imageSection} alt={employee.desc} />
-            </WrapImg>
-            <h4>{employee.title}</h4>
-            <p>{employee.desc}</p>
-          </CardOfEmployee>
+          <CardWrapper>
+            <CardOfEmployee>
+              <WrapImg>
+                <img src={employee.imageSection} alt={employee.desc} />
+              </WrapImg>
+              <h4>{employee.title}</h4>
+              <p>{employee.desc}</p>
+            </CardOfEmployee>
+          </CardWrapper>
         ))}
       </Content>
-      <DropdownSlider
-        isOpen={isOpen}
-        toggle={toggle}
-        setCurr={setCurr}
-        active={active}
-        teamData={teamData}
-      />
     </SectionAboutUs>
   );
 };
