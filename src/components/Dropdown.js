@@ -86,9 +86,9 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
       </Icon>
       <DropdownWrapper>
         <DropdownMenu>
-          {menuData[lang].map((item, index) => (
+          {menuData.data.map((item, index) => (
             <DropdownLink to={item.link} key={index}>
-              {item.title}
+              {item.title[lang]}
             </DropdownLink>
           ))}
           <WrapLangSelect onClick={handlerOnLangClick}>

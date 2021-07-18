@@ -11,7 +11,7 @@ import logo from '../images/logo_header.png';
 import LangSelect from './LangSelect';
 
 const Nav = styled.nav`
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,8 +21,8 @@ const Nav = styled.nav`
   width: 100%;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
     rgba(0, 0, 0, 0) 100%
   );
 `;
@@ -114,9 +114,9 @@ const Navbar = ({ toggle, setLang }) => {
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
-        {menuData[lang].map((item, index) => (
+        {menuData.data.map((item, index) => (
           <NavMenuLinks to={item.link} key={index}>
-            {item.title}
+            {item.title[lang]}
           </NavMenuLinks>
         ))}
       </NavMenu>

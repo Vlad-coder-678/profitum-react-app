@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { teamData } from "../data/teamData";
+import React from 'react';
+import styled from 'styled-components';
+import { teamData } from '../data/teamData';
+import { ACCENT_COLOR } from '../constants';
 
 const SectionAboutUs = styled.section`
   padding: 1rem 2rem;
@@ -20,27 +21,40 @@ const Content = styled.div`
 
 const CardWrapper = styled.div`
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   text-align: center;
-  margin-bottom: 4rem;
   position: relative;
-  margin: 1rem;
+  margin: 1rem 2rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 
-  &:before {
-    content: "";
+  &:hover {
+    transition: 0.3s ease-in-out;
+    color: ${ACCENT_COLOR};
+    &::before {
+      transition: 0.3s ease-in-out;
+      background-color: #000d1a;
+      border: 2px solid ${ACCENT_COLOR};
+    }
+    img {
+      transform: scale(103%);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &::before {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 40%;
-    background-color: #cd853f;
-    border-radius: 10px;
+    height: 75%;
+    background-color: ${ACCENT_COLOR};
     z-index: -1;
+    transition: 0.3s ease-in-out;
   }
 `;
 
 const CardOfEmployee = styled.div`
-  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +62,6 @@ const CardOfEmployee = styled.div`
 
   h3 {
     line-height: 40px;
-    font-size: 1.5rem;
     color: #000d1a;
   }
   p {
@@ -57,17 +70,20 @@ const CardOfEmployee = styled.div`
     font-size: 1rem;
     color: #fff;
   }
-  `;
+`;
 
 const WrapImg = styled.div`
   width: 100%;
   height: 350px;
-  margin: 1rem;
+  margin-bottom: 1rem;
+  transform: translateX(-5%);
+  overflow: hidden;
+
   img {
-    border-radius: 10px;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.3s ease-in-out;
   }
 
   @media screen and(max-width: 768px) {
@@ -81,7 +97,7 @@ const AboutUs = () => {
       <Title>Наша команда</Title>
       <Content>
         {teamData.map((employee, id) => (
-          <CardWrapper>
+          <CardWrapper key={id}>
             <CardOfEmployee>
               <WrapImg>
                 <img src={employee.imageSection} alt={employee.desc} />

@@ -1,12 +1,7 @@
 {
-  "RU": [
-    { "title": "Главная", "link": "./homes" },
-    { "title": "О нас", "link": "./about" },
-    { "title": "Скидки", "link": "./rentals" }
-  ],
-  "EN": [
-    { "title": "Homes", "link": "./homes" },
-    { "title": "About", "link": "./about" },
-    { "title": "Rentals", "link": "./rentals" }
+  "data": [
+    { "title": { "RU": "Главная", "EN": "Homes" }, "link": "./homes" },
+    { "title": { "RU": "О нас", "EN": "About" }, "link": "./about" },
+    { "title": { "RU": "Скидки", "EN": "Rentals" }, "link": "./rentals" }
   ]
 }
