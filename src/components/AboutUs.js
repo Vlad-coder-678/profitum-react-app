@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { teamData } from '../data/teamData';
 import { ACCENT_COLOR } from '../constants';
@@ -92,20 +93,23 @@ const WrapImg = styled.div`
 `;
 
 const AboutUs = () => {
+
   return (
-    <SectionAboutUs>
+    <SectionAboutUs id='about_us'>
       <Title>Наша команда</Title>
       <Content>
         {teamData.map((employee, id) => (
-          <CardWrapper key={id}>
-            <CardOfEmployee>
-              <WrapImg>
-                <img src={employee.imageSection} alt={employee.desc} />
-              </WrapImg>
-              <h4>{employee.title}</h4>
-              <p>{employee.desc}</p>
-            </CardOfEmployee>
-          </CardWrapper>
+          <NavLink key={employee.route} to={employee.route}>
+            <CardWrapper>
+              <CardOfEmployee>
+                <WrapImg>
+                  <img src={employee.imageSection} alt={employee.desc} />
+                </WrapImg>
+                <h4>{employee.title}</h4>
+                <p>{employee.desc}</p>
+              </CardOfEmployee>
+            </CardWrapper>
+          </NavLink>
         ))}
       </Content>
     </SectionAboutUs>

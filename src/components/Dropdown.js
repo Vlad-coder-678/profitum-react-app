@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { menuData } from '../data/headerData';
-import {buttonText} from '../data/button';
+import { contactUsBtn } from '../data/buttons';
 import { LangContext } from '../App';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
@@ -97,7 +97,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
         </DropdownMenu>
         <BtnWrap>
           <Button primary="true" round="true" big="true" to="./contact">
-            {buttonText[lang]}
+            {contactUsBtn[lang]}
           </Button>
         </BtnWrap>
       </DropdownWrapper>

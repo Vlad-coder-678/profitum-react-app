@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { menuData } from '../data/headerData';
-import {buttonText} from '../data/button';
+import { contactUsBtn } from '../data/buttons';
 import { LangContext } from '../App';
 import { Button } from './Button';
 import Bars from '../images/bars.svg';
@@ -121,7 +121,7 @@ const Navbar = ({ toggle, setLang }) => {
         ))}
       </NavMenu>
       <NavBtn>
-        <Button to="/contact"> {buttonText[lang]}</Button>
+        <Button to="/contact"> {contactUsBtn[lang]}</Button>
       </NavBtn>
       <Languages>
         <LangSelect setLang={setLang} lang={lang} />
