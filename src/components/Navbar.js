@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-import menuData from '../data/header.json';
-import buttonText from '../data/button.json';
+import { menuData } from '../data/headerData';
+import {buttonText} from '../data/button';
 import { LangContext } from '../App';
 import { Button } from './Button';
 import Bars from '../images/bars.svg';
@@ -114,7 +114,7 @@ const Navbar = ({ toggle, setLang }) => {
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
-        {menuData.data.map((item, index) => (
+        {menuData.map((item, index) => (
           <NavMenuLinks to={item.link} key={index}>
             {item.title[lang]}
           </NavMenuLinks>
