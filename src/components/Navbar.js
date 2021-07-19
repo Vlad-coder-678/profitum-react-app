@@ -1,8 +1,9 @@
 import React from 'react';
+// import { Link as ScrollLink } from 'react-scroll';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-import menuData from '../data/header.json';
-import buttonText from '../data/button.json';
+import { menuData } from '../data/headerData';
+import { contactUsBtn } from '../data/buttons';
 import { LangContext } from '../App';
 import { Button } from './Button';
 import Bars from '../images/bars.svg';
@@ -114,14 +115,25 @@ const Navbar = ({ toggle, setLang }) => {
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
-        {menuData.data.map((item, index) => (
-          <NavMenuLinks to={item.link} key={index}>
+        {/* {menuData.map((item) => (
+          <ScrollLink
+            key={item.link}
+            activeClass="active"
+            to={item.link}
+            spy={true}
+            smooth={true}
+          >
+            <NavMenuLinks>{item.title[lang]}</NavMenuLinks>
+          </ScrollLink>
+        ))} */}
+        {menuData.map((item) => (
+          <a key={item.link} href={item.link}>
             {item.title[lang]}
-          </NavMenuLinks>
+          </a>
         ))}
       </NavMenu>
       <NavBtn>
-        <Button to="/contact"> {buttonText[lang]}</Button>
+        <Button to="/contact"> {contactUsBtn[lang]}</Button>
       </NavBtn>
       <Languages>
         <LangSelect setLang={setLang} lang={lang} />

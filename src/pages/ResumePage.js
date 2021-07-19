@@ -1,9 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Resume from "./Resume";
-import { Button } from "./Button";
+import React from 'react';
+import styled from 'styled-components';
+import Resume from '../components/Resume';
+import { Button } from '../components/Button';
 
-import { IoArrowBack } from "react-icons/io5";
+import { IoArrowBack } from 'react-icons/io5';
+import ScrollToTop from '../components/ScrollToTop';
 
 const ResumeContainer = styled.div`
   position: relative;
@@ -89,7 +90,7 @@ const CardWrapper = styled.div`
   position: relative;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -142,9 +143,12 @@ const Content = styled.div`
 const ResumePage = ({ employee }) => {
   return (
     <ResumeContainer>
-      <Icon>
-        <ArrowBackIcon />
-      </Icon>
+      <ScrollToTop />
+      <a href="/#about_us">
+        <Icon>
+          <ArrowBackIcon />
+        </Icon>
+      </a>
       <ContentLeft>
         <CardWrapper>
           <Card>
@@ -158,7 +162,7 @@ const ResumePage = ({ employee }) => {
           </Card>
         </CardWrapper>
         <Button primary="true" to="./contact">
-          ContactUs
+          Contact Us
         </Button>
       </ContentLeft>
       <ContentRight>

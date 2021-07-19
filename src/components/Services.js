@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components/macro";
-
-import { Button } from "./Button.js";
-import { IoMdArrowRoundForward } from "react-icons/io";
-import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import React, { useState, useEffect, useRef } from 'react';
+import styled, { css } from 'styled-components/macro';
+import { servicesData } from '../data/servicesData';
+import { Button } from './Button.js';
+import { IoMdArrowRoundForward } from 'react-icons/io';
+import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
 
 const ServicesSection = styled.section`
   height: 100vh;
@@ -38,7 +38,7 @@ const ServicesSlider = styled.div`
   justify-content: center;
   align-items: center;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -122,7 +122,7 @@ const NextArrow = styled(IoArrowForward)`
   ${arrowButtons}
 `;
 
-const Services = ({ servicesData }) => {
+const Services = () => {
   const [curr, setCurr] = useState(0);
   const length = servicesData.length;
   const timeout = useRef(null);
@@ -160,7 +160,7 @@ const Services = ({ servicesData }) => {
   }
 
   return (
-    <ServicesSection>
+    <ServicesSection id="home">
       <ServicesWrapper>
         {servicesData.map((slide, index) => (
           <ServicesSlide key={index}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import menuData from '../data/header.json';
-import buttonText from '../data/button.json';
+import { menuData } from '../data/headerData';
+import { contactUsBtn } from '../data/buttons';
 import { LangContext } from '../App';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import LangSelect from './LangSelect';
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from 'react-icons/fa';
 const DropdownContainer = styled.div`
   position: fixed;
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
@@ -86,7 +86,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
       </Icon>
       <DropdownWrapper>
         <DropdownMenu>
-          {menuData.data.map((item, index) => (
+          {menuData.map((item, index) => (
             <DropdownLink to={item.link} key={index}>
               {item.title[lang]}
             </DropdownLink>
@@ -97,7 +97,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
         </DropdownMenu>
         <BtnWrap>
           <Button primary="true" round="true" big="true" to="./contact">
-            {buttonText[lang]}
+            {contactUsBtn[lang]}
           </Button>
         </BtnWrap>
       </DropdownWrapper>

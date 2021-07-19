@@ -40,6 +40,7 @@ import docIM4 from "../images/docsIM/docIM4.jpg";
 
 export const teamData = [
   {
+    route: "/analyst",
     imageSection: ImageJK1,
     imageSlider: ImageJK2,
     alt: "Аудит и анализ бизнеса",
@@ -720,6 +721,7 @@ export const teamData = [
     ],
   },
   {
+    route: "/coach",
     imageSection: ImageIM1,
     imageSlider: ImageIM2,
     alt: "Коуч личностного роста",
