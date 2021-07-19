@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: sans-serif;
         }
 
+    html {
+        scroll-behavior: smooth;
+        }
+
     html, body {
         overflow-x: hidden;
     }
@@ -21,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         color: #000;
+    }
+
+    .active {
+        border: 1px solid red;
     }
 `;
 

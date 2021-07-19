@@ -5,7 +5,6 @@ import { Button } from '../components/Button';
 
 import { IoArrowBack } from 'react-icons/io5';
 import ScrollToTop from '../components/ScrollToTop';
-import { NavLink } from 'react-router-dom';
 
 const ResumeContainer = styled.div`
   position: relative;
@@ -145,9 +144,11 @@ const ResumePage = ({ employee }) => {
   return (
     <ResumeContainer>
       <ScrollToTop />
+      <a href="/#about_us">
         <Icon>
           <ArrowBackIcon />
         </Icon>
+      </a>
       <ContentLeft>
         <CardWrapper>
           <Card>

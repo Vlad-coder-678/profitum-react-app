@@ -160,7 +160,7 @@ const Services = () => {
   }
 
   return (
-    <ServicesSection>
+    <ServicesSection id="home">
       <ServicesWrapper>
         {servicesData.map((slide, index) => (
           <ServicesSlide key={index}>
