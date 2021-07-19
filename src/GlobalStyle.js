@@ -26,10 +26,6 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: #000;
     }
-
-    .active {
-        border: 1px solid red;
-    }
 `;
 
 export default GlobalStyle;
