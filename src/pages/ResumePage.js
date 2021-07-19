@@ -1,10 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import Resume from '../components/Resume';
-import { Button } from '../components/Button';
+import React from "react";
+import styled from "styled-components";
 
-import { IoArrowBack } from 'react-icons/io5';
-import ScrollToTop from '../components/ScrollToTop';
+import ResumeSection from "../components/ResumeSection";
+import { Button } from "../components/Button";
+import ScrollToTop from "../components/ScrollToTop";
+import CardOfEmployee from "../components/CardOfEmployee";
+
+import { FaTimes } from "react-icons/fa";
 
 const ResumeContainer = styled.div`
   position: relative;
@@ -14,7 +16,7 @@ const ResumeContainer = styled.div`
   justify-content: center;
   align-items: start;
   flex-direction: row;
-  padding-top: 2rem;
+  padding-top: 5rem;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -23,9 +25,9 @@ const ResumeContainer = styled.div`
 `;
 
 const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 0.5rem;
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
   background: transparent;
   font-size: 2rem;
   cursor: pointer;
@@ -33,7 +35,7 @@ const Icon = styled.div`
   z-index: 100;
 `;
 
-const ArrowBackIcon = styled(IoArrowBack)`
+const ArrowBackIcon = styled(FaTimes)`
   width: 50px;
   height: 50px;
   color: #000d1a;
@@ -41,7 +43,6 @@ const ArrowBackIcon = styled(IoArrowBack)`
   background: #cd853f;
   border-radius: 50px;
   padding: 10px;
-  margin-right: 1rem;
   user-selected: none;
   transition: 0.3s;
   &:hover {
@@ -83,64 +84,24 @@ const ContentRight = styled.div`
   }
 `;
 
-const CardWrapper = styled.div`
+const DropResumeSlider = styled.div`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
-  margin-bottom: 4rem;
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    min-height: 40%;
-    background-color: #cd853f;
-    border-radius: 10px;
-    z-index: -1;
-  }
-`;
-
-const Card = styled.div`
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const WrapImage = styled.div`
-  width: 100%;
-  height: 350px;
-  margin: 1rem;
-  img {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  @media screen and(max-width: 768px) {
-    height: 300px;
-  }
-`;
-
-const Content = styled.div`
-  h3 {
-    line-height: 40px;
-    font-size: 1.5rem;
-    color: #000d1a;
-  }
-  p {
-    line-height: 40px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #fff;
-  }
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
 `;
 
 const ResumePage = ({ employee }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <ResumeContainer>
       <ScrollToTop />
@@ -150,24 +111,15 @@ const ResumePage = ({ employee }) => {
         </Icon>
       </a>
       <ContentLeft>
-        <CardWrapper>
-          <Card>
-            <WrapImage>
-              <img src={employee.imageSlider} alt={employee.alt} />
-            </WrapImage>
-            <Content>
-              <h3>{employee.title}</h3>
-              <p>{employee.desc}</p>
-            </Content>
-          </Card>
-        </CardWrapper>
+        <CardOfEmployee employee={employee} isHover={false} />
         <Button primary="true" to="./contact">
           Contact Us
         </Button>
       </ContentLeft>
       <ContentRight>
-        <Resume resume={employee.resume} />
+        <ResumeSection resume={employee.resume} toggle={toggle} />
       </ContentRight>
+      <DropResumeSlider onClick={toggle} isOpen={isOpen} />
     </ResumeContainer>
   );
 };

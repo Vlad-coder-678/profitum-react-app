@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components/macro';
+
 import { servicesData } from '../data/servicesData';
+
 import { Button } from './Button.js';
+
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
 

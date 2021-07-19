@@ -1,12 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import { menuData } from '../data/headerData';
 import { contactUsBtn } from '../data/buttons';
+
 import { LangContext } from '../App';
 import { Button } from './Button';
-import { Link } from 'react-router-dom';
 import LangSelect from './LangSelect';
+
 import { FaTimes } from 'react-icons/fa';
+
 const DropdownContainer = styled.div`
   position: fixed;
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
