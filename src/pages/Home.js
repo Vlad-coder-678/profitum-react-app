@@ -1,9 +1,10 @@
 import React from 'react';
-import Services from '../components/Services';
-import AboutCompany from '../components/AboutCompany';
-import AboutUs from '../components/AboutUs';
-import Advantages from '../components/Advantages';
-import Works from '../components/Works';
+import Services from '../sections/Services';
+import AboutCompany from '../sections/AboutCompany';
+import AboutUs from '../sections/AboutUs';
+import Advantages from '../sections/Advantages';
+import Works from '../sections/Works';
+import Contacts from '../sections/Contacts';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutUs />
       <Advantages />
       <Works />
+      <Contacts />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Button } from "./Button";
+import { Button } from "../components/Button";
 import logo_about from "../images/logo_about.jpg";
 
 const SectionAbout = styled.section``;
