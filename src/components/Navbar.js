@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 // import { Link as ScrollLink } from 'react-scroll';
-import styled, { css } from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-import { menuData } from '../data/headerData';
-import { contactUsBtn } from '../data/buttons';
-import { LangContext } from '../App';
-import { Button } from './Button';
-import Bars from '../images/bars.svg';
-// import { FaBars } from "react-icons/fa";
-import logo from '../images/logo_header.png';
-import LangSelect from './LangSelect';
+import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
+import { menuData } from "../data/headerData";
+import { contactUsBtn } from "../data/buttons";
+import { LangContext } from "../App";
+import { Button } from "./Button";
+import Bars from "../images/bars.svg";
+import logo from "../images/logo_header.png";
+import LangSelect from "./LangSelect";
 
 const Nav = styled.nav`
   height: 70px;
@@ -43,14 +42,6 @@ const LogoImg = styled.img`
   object-fit: cover;
 `;
 
-// const MenuBars = styled(FaBars)
-//   display: none;
-
-//   @media screen and (max-width: 768px) {
-//     display: block;
-//   }
-// `;
-
 const MenuBars = styled.i`
   display: none;
   @media screen and (max-width: 768px) {
@@ -76,7 +67,7 @@ const NavMenu = styled.div`
   }
 `;
 
-const NavLink = css`
+const NavLink = styled.a`
   color: #fff;
   display: flex;
   align-items: center;
@@ -84,10 +75,6 @@ const NavLink = css`
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-`;
-
-const NavMenuLinks = styled(Link)`
-  ${NavLink}
 `;
 
 const NavBtn = styled.div`
@@ -110,8 +97,8 @@ const Navbar = ({ toggle, setLang }) => {
 
   return (
     <Nav>
-      <Logo>
-        <LogoImg src={logo} alt={'logo'} />
+      <Logo to={"/"}>
+        <LogoImg src={logo} alt={"logo"} />
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
@@ -127,9 +114,9 @@ const Navbar = ({ toggle, setLang }) => {
           </ScrollLink>
         ))} */}
         {menuData.map((item) => (
-          <a key={item.link} href={item.link}>
+          <NavLink key={item.link} href={item.link}>
             {item.title[lang]}
-          </a>
+          </NavLink>
         ))}
       </NavMenu>
       <NavBtn>

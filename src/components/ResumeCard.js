@@ -28,7 +28,7 @@ const CardResume = styled.div`
 
 const Title = styled.h4`
   font-size: 1rem;
-  color: #cd853f;
+  color: ${ACCENT_COLOR};
   margin-bottom: 1.5rem;
 `;
 
@@ -77,9 +77,15 @@ const WrapDoc = styled.div`
   }
 `;
 
-const ResumeCard = ({ resumeOfEmployee, toggle }) => {
+const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt }) => {
+  const handleclick = (event) => {
+    setDoc(event.target.src);
+    setAlt(event.target.alt);
+    toggle();
+  };
+
   return (
-    <CardResume onClick={toggle}>
+    <CardResume>
       <Title>{resumeOfEmployee.title}</Title>
       {resumeOfEmployee.content.map((item, index) => (
         <WrapContent key={index}>
@@ -88,7 +94,7 @@ const ResumeCard = ({ resumeOfEmployee, toggle }) => {
           <WrapVoc>{item.vocation}</WrapVoc>
           <WrapDesc>{item.desc}</WrapDesc>
           {item.doc ? (
-            <WrapDoc>
+            <WrapDoc onClick={handleclick}>
               <img src={item.doc} alt={item.alt} />
             </WrapDoc>
           ) : null}

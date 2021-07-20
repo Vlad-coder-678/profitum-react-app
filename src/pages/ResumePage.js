@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import ResumeSection from "../components/ResumeSection";
 import { Button } from "../components/Button";
 import ScrollToTop from "../components/ScrollToTop";
 import CardOfEmployee from "../components/CardOfEmployee";
+import ResumeSection from "../components/ResumeSection";
+import ResumeDropdownSlider from "../components/ResumeDropdownSlider";
 
 import { FaTimes } from "react-icons/fa";
 
@@ -84,22 +85,19 @@ const ContentRight = styled.div`
   }
 `;
 
-const DropResumeSlider = styled.div`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
-`;
-
 const ResumePage = ({ employee }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [doc, setDoc] = React.useState(null);
+  const [alt, setAlt] = React.useState(null);
 
   const toggle = () => {
     setIsOpen(!isOpen);
+  };
+  const setNeededDoc = (doc) => {
+    setDoc(doc);
+  };
+  const setNeededAlt = (alt) => {
+    setAlt(alt);
   };
 
   return (
@@ -117,9 +115,19 @@ const ResumePage = ({ employee }) => {
         </Button>
       </ContentLeft>
       <ContentRight>
-        <ResumeSection resume={employee.resume} toggle={toggle} />
+        <ResumeSection
+          resume={employee.resume}
+          toggle={toggle}
+          setNeededDoc={setNeededDoc}
+          setNeededAlt={setNeededAlt}
+        />
       </ContentRight>
-      <DropResumeSlider onClick={toggle} isOpen={isOpen} />
+      <ResumeDropdownSlider
+        toggle={toggle}
+        isOpen={isOpen}
+        doc={doc}
+        alt={alt}
+      />
     </ResumeContainer>
   );
 };

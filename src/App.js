@@ -1,12 +1,12 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import GlobalStyle from './GlobalStyle';
-import Header from './components/Header';
-import ResumePage from './pages/ResumePage';
-import { teamData } from './data/teamData';
-import { EN } from './constants';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./components/Header";
+import ResumePage from "./pages/ResumePage";
+import { teamData } from "./data/teamData";
+import { EN } from "./constants";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 export const LangContext = React.createContext();
 
@@ -14,8 +14,8 @@ function App() {
   const [lang, setLang] = React.useState(EN);
 
   React.useEffect(() => {
-    if (window.localStorage.getItem('lang') !== null) {
-      setLang(localStorage.getItem('lang'));
+    if (window.localStorage.getItem("lang") !== null) {
+      setLang(localStorage.getItem("lang"));
     }
   }, []);
 

@@ -48,7 +48,7 @@ const ContentRight = styled.div`
   flex-direction: column;
 `;
 
-const ResumeSection = ({ resume, toggle }) => {
+const ResumeSection = ({ resume, toggle, setNeededDoc, setNeededAlt }) => {
   const leftContent = [];
   const rightContent = [];
 
@@ -65,19 +65,37 @@ const ResumeSection = ({ resume, toggle }) => {
       <ContentBigScreen>
         <ContentLeft>
           {leftContent.map((item, index) => (
-            <ResumeCard key={index} resumeOfEmployee={item} toggle={toggle} />
+            <ResumeCard
+              key={index}
+              resumeOfEmployee={item}
+              toggle={toggle}
+              setDoc={setNeededDoc}
+              setAlt={setNeededAlt}
+            />
           ))}
         </ContentLeft>
         <ContentRight>
           {rightContent.map((item, index) => (
-            <ResumeCard key={index} resumeOfEmployee={item} toggle={toggle} />
+            <ResumeCard
+              key={index}
+              resumeOfEmployee={item}
+              toggle={toggle}
+              setDoc={setNeededDoc}
+              setAlt={setNeededAlt}
+            />
           ))}
         </ContentRight>
       </ContentBigScreen>
       <ContentSmallScreen>
         <Content>
           {resume.map((item, index) => (
-            <ResumeCard key={index} resumeOfEmployee={item} toggle={toggle} />
+            <ResumeCard
+              key={index}
+              resumeOfEmployee={item}
+              toggle={toggle}
+              setDoc={setNeededDoc}
+              setAlt={setNeededAlt}
+            />
           ))}
         </Content>
       </ContentSmallScreen>
