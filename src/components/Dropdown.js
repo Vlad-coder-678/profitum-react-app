@@ -1,15 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import { menuData } from '../data/headerData';
-import { contactUsBtn } from '../data/buttons';
-import { LangContext } from '../App';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
-import LangSelect from './LangSelect';
-import { FaTimes } from 'react-icons/fa';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+import { menuData } from "../data/headerData";
+import { contactUsBtn } from "../data/buttons";
+
+import { LangContext } from "../App";
+import { Button } from "./Button";
+import LangSelect from "./LangSelect";
+
+import { FaTimes } from "react-icons/fa";
+
 const DropdownContainer = styled.div`
   position: fixed;
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   left: 0;
   width: 100%;
   height: 100%;
@@ -17,7 +21,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   background: #cd853f;
   transition: 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
   z-index: 999;
 `;
 
@@ -33,6 +37,7 @@ const Icon = styled.div`
 const CloseIcon = styled(FaTimes)`
   color: #000d1a;
 `;
+
 const DropdownWrapper = styled.div``;
 const DropdownMenu = styled.div`
   display: grid;
