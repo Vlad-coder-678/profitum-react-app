@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components/macro';
+
 import { servicesData } from '../data/servicesData';
-import { Button } from '../components/Button.js';
+
+import { Button } from '../components/Button';
+
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
 
@@ -13,13 +16,13 @@ const ServicesSection = styled.section`
 `;
 
 const ServicesWrapper = styled.div`
-  display: flex;
-  justify-contetn: center;
-  align-items: center;
-  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const ServicesSlide = styled.div`
@@ -55,6 +58,7 @@ const ServicesSlider = styled.div`
     );
   }
 `;
+
 const ServicesImage = styled.img`
   position: absolute;
   top: 0;
@@ -63,6 +67,7 @@ const ServicesImage = styled.img`
   height: 100vh;
   object-fit: cover;
 `;
+
 const ServicesContent = styled.div`
   position: relative;
   z-index: 10;
@@ -71,17 +76,17 @@ const ServicesContent = styled.div`
   max-width: 1600px;
   width: calc(100% - 100px);
   color: #fff;
-  h1{
+  h1 {
     font-size: clamp(1rem, 8vw, 2rem);
     font-weight: 400;
     text-transform: uppercase;
-    text-shadow: 0px 0px; 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     text-align: left;
     margin-bottom: 0.8rem;
   }
-  p{
-      margin-bottom: 1.2rem;
-      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  p {
+    margin-bottom: 1.2rem;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
 `;
 

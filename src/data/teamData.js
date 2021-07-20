@@ -31,7 +31,6 @@ import docJK24 from "../images/docsJK/docJK24.jpg";
 import docJK25 from "../images/docsJK/docJK25.jpg";
 import docJK26 from "../images/docsJK/docJK26.jpg";
 import docJK27 from "../images/docsJK/docJK27.jpg";
-import docJK28 from "../images/docsJK/docJK28.jpg";
 
 import docIM1 from "../images/docsIM/docIM1.jpg";
 import docIM2 from "../images/docsIM/docIM2.jpg";
@@ -57,10 +56,10 @@ export const teamData = [
             desc: ``,
           },
           {
-            date: ``,
-            location: `Сертификат о высшем образовании в области преподавания и 
-            поддерживающего обучения 2018 г.`,
-            vocation: ``,
+            date: `2018 г.`,
+            location: ``,
+            vocation: `Сертификат о высшем образовании в области преподавания и 
+            поддерживающего обучения`,
             desc: ``,
           },
           {
@@ -701,19 +700,6 @@ export const teamData = [
             vocation: ``,
             desc: ``,
             doc: docJK27,
-            alt: ``,
-          },
-        ],
-      },
-      {
-        title: ``,
-        content: [
-          {
-            date: ``,
-            location: ``,
-            vocation: ``,
-            desc: ``,
-            doc: docJK28,
             alt: ``,
           },
         ],
