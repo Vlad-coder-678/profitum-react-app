@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GlobalStyle from './GlobalStyle';
-import Header from './components/Header';
+import Header from './sections/Header';
 import ResumePage from './pages/ResumePage';
 import { teamData } from './data/teamData';
 import { EN } from './constants';

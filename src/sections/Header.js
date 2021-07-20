@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navbar from './Navbar';
-import Dropdown from './Dropdown';
+import Navbar from '../components/Navbar';
+import Dropdown from '../components/Dropdown';
 
 const Header = ({ setLang }) => {
   const [isOpen, setIsOpen] = React.useState(false);

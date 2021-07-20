@@ -17,7 +17,7 @@ export const worksData = [
         <div>
           With turnover
           <LargeText>
-            from <Number number={2} /> million USD to
+            from <Number number={2} /> million USD to { }
             <Number number={2} /> billion USD
           </LargeText>
         </div>

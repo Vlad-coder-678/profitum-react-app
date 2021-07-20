@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { LangContext } from '../App';
 import { advantagesData } from '../data/advantagesData';
-import AdvantagesItem from './AdvantagesItem';
+import AdvantagesItem from '../components/AdvantagesItem';
 
 const SectionAdvantages = styled.section`
   padding: 1rem 2rem;
