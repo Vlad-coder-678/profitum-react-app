@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { menuData } from "../data/headerData";
@@ -50,7 +49,7 @@ const DropdownMenu = styled.div`
   }
 `;
 
-const DropdownLink = styled(Link)`
+const DropdownLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +91,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
       <DropdownWrapper>
         <DropdownMenu>
           {menuData.map((item, index) => (
-            <DropdownLink to={item.link} key={index}>
+            <DropdownLink href={item.link} key={index}>
               {item.title[lang]}
             </DropdownLink>
           ))}
@@ -101,7 +100,7 @@ const Dropdown = ({ isOpen, toggle, setLang }) => {
           </WrapLangSelect>
         </DropdownMenu>
         <BtnWrap>
-          <Button primary="true" round="true" big="true" to="./contact">
+          <Button primary={true} round={true} big={false} to="./contact">
             {contactUsBtn[lang]}
           </Button>
         </BtnWrap>

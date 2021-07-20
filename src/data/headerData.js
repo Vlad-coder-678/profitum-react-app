@@ -1,5 +1,6 @@
 export const menuData = [
-  { title: { RU: 'Главная', EN: 'Homes' }, link: '/#home' },
-  { title: { RU: 'О компании', EN: 'About' }, link: '/#about' },
-  { title: { RU: 'О нас', EN: 'About us' }, link: '/#about_us' },
+  { title: { RU: "Услуги", EN: "Services" }, link: "/#services" },
+  { title: { RU: "О компании", EN: "About" }, link: "/#about" },
+  { title: { RU: "Наша команда", EN: "Our team" }, link: "/#team" },
+  { title: { RU: "Контакты", EN: "Contacts" }, link: "/#contacts" },
 ];

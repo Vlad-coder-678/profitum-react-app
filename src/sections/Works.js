@@ -1,11 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { LangContext } from '../App';
-import { worksData } from '../data/worksData';
+import React from "react";
+import styled from "styled-components";
+import { LangContext } from "../App";
+import { worksData } from "../data/worksData";
+import { SECTION_BG_COLOR } from "../constants";
 
 const SectionWorks = styled.section`
   padding: 1rem 2rem;
   position: relative;
+  background-color: ${SECTION_BG_COLOR};
 `;
 
 const Title = styled.h2`
@@ -25,9 +27,9 @@ const ContentItem = styled.div`
   text-align: center;
   padding-right: 10px;
   padding-left: 10px;
-  padding-bottom: 3rem;
   @media screen and (max-width: 1300px) {
     width: 50%;
+    padding-bottom: 3rem;
   }
   @media screen and (max-width: 500px) {
     width: 100%;

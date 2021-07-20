@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled, { css } from 'styled-components/macro';
+import React, { useState, useEffect, useRef } from "react";
+import styled, { css } from "styled-components/macro";
 
-import { servicesData } from '../data/servicesData';
+import { servicesData } from "../data/servicesData";
 
-import { Button } from '../components/Button';
+import { Button } from "../components/Button";
 
-import { IoMdArrowRoundForward } from 'react-icons/io';
-import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
+import { IoMdArrowRoundForward } from "react-icons/io";
+import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
 const ServicesSection = styled.section`
   height: 100vh;
@@ -41,7 +41,7 @@ const ServicesSlider = styled.div`
   justify-content: center;
   align-items: center;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -100,6 +100,11 @@ const SliderButtons = styled.div`
   right: 50px;
   display: flex;
   z-index: 10;
+
+  @media screen and (max-width: 768px) {
+    bottom: 30px;
+    right: 30px;
+  }
 `;
 
 const arrowButtons = css`
@@ -165,7 +170,7 @@ const Services = () => {
   }
 
   return (
-    <ServicesSection id="home">
+    <ServicesSection id="services">
       <ServicesWrapper>
         {servicesData.map((slide, index) => (
           <ServicesSlide key={index}>
@@ -174,7 +179,6 @@ const Services = () => {
                 <ServicesImage src={slide.image} alt={slide.alt} />
                 <ServicesContent>
                   <h1>{slide.title}</h1>
-                  <p>{slide.price}</p>
                   <Button
                     to={slide.path}
                     primary="true"

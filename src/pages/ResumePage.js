@@ -103,7 +103,7 @@ const ResumePage = ({ employee }) => {
   return (
     <ResumeContainer>
       <ScrollToTop />
-      <a href="/#about_us">
+      <a href="/#team">
         <Icon>
           <ArrowBackIcon />
         </Icon>

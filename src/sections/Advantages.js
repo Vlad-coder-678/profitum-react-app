@@ -1,12 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { LangContext } from '../App';
-import { advantagesData } from '../data/advantagesData';
-import AdvantagesItem from '../components/AdvantagesItem';
+import React from "react";
+import styled from "styled-components";
+import { LangContext } from "../App";
+import { advantagesData } from "../data/advantagesData";
+import AdvantagesItem from "../components/AdvantagesItem";
+import { SECTION_BG_COLOR } from "../constants";
 
 const SectionAdvantages = styled.section`
   padding: 1rem 2rem;
   position: relative;
+  background-color: ${SECTION_BG_COLOR};
 `;
 
 const Title = styled.h2`

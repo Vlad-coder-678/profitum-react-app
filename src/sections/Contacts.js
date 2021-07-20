@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { LangContext } from '../App';
-import { contactsData } from '../data/contactsData';
+import React from "react";
+import styled from "styled-components";
+import { LangContext } from "../App";
+import { contactsData } from "../data/contactsData";
 
 const SectionContacts = styled.section`
   padding: 1rem 2rem;
@@ -18,6 +18,10 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  @media screen and (max-width: 500px) {
+    text-align: center;
+  }
 `;
 
 const Contacts = () => {

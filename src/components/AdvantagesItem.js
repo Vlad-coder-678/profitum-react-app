@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { IconContext } from 'react-icons';
-import { ACCENT_COLOR } from '../constants';
+import React from "react";
+import styled from "styled-components";
+import { IconContext } from "react-icons";
+import { ACCENT_COLOR } from "../constants";
 
 const Container = styled.div`
   width: 25%;
   text-align: center;
   padding-right: 10px;
   padding-left: 10px;
-  padding-bottom: 3rem;
   @media screen and (max-width: 1300px) {
     width: 50%;
+    padding-bottom: 3rem;
   }
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -26,7 +26,7 @@ const Text = styled.p`
 const AdvantagesItem = ({ img, text }) => {
   return (
     <Container>
-      <IconContext.Provider value={{ color: ACCENT_COLOR, size: '50px' }}>
+      <IconContext.Provider value={{ color: ACCENT_COLOR, size: "50px" }}>
         <div>{img}</div>
       </IconContext.Provider>
 

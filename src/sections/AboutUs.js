@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-import { teamData } from '../data/teamData';
+import { teamData } from "../data/teamData";
 
-import CardOfEmployee from '../components/CardOfEmployee';
+import CardOfEmployee from "../components/CardOfEmployee";
 
 const SectionAboutUs = styled.section`
   padding: 1rem 2rem;
@@ -35,7 +35,7 @@ const Content = styled.div`
 
 const AboutUs = () => {
   return (
-    <SectionAboutUs id="about_us">
+    <SectionAboutUs id="team">
       <Title>Наша команда</Title>
       <Content>
         {teamData.map((employee) => (

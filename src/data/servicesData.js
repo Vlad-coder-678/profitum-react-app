@@ -2,56 +2,20 @@ import Image1 from "../images/services_1.jpg";
 import Image2 from "../images/services_2.jpg";
 import Image3 from "../images/services_3.jpg";
 import Image4 from "../images/services_4.jpg";
+import Image5 from "../images/services_5.jpg";
 
 export const servicesData = [
   {
-    title: "Аудит и анализ бизнеса",
-    price: "50,000 руб",
+    title: "Диагностика текущего состояния бизнеса",
+    price: `123123123`,
+    desc: "Комплексный финансовый анализ хозяйственно-коммерческой деятельности",
     path: "/homes",
     label: "Подробнее",
     image: Image1,
     alt: "Аудит и анализ бизнеса",
     sayThanks: `Photo by <a href="https://unsplash.com/@kmuza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carlos Muza</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     `,
-  },
-  {
-    title: "Консалт",
-    price: "50,000 руб",
-    path: "/homes",
-    label: "Подробнее",
-    image: Image2,
-    alt: "Консалт",
-    sayThanks: `Photo by <a href="https://unsplash.com/@naomi365photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">vu anh</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    `,
-  },
-  {
-    title: "Окей анализ",
-    price: "50,000 руб",
-    path: "/homes",
-    label: "Подробнее",
-    image: Image3,
-    alt: "Окей анализ",
-    sayThanks: `Photo by <a href="https://unsplash.com/@heybeautimagazine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nicola Styles</a> on <a href="https://unsplash.com/s/photos/okay?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    `,
-  },
-  {
-    title: "Финансовый рост",
-    price: "50,000 руб",
-    path: "/homes",
-    label: "Подробнее",
-    image: Image4,
-    alt: "Финансовый рост",
-    sayThanks: `Photo by <a href="https://unsplash.com/@micheile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Micheile Henderson</a> on <a href="https://unsplash.com/s/photos/finance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    `,
-  },
-];
-
-export const services = {
-  services: [
-    {
-      sevice: "Диагностика текущего состояния бизнеса",
-      desc: "Комплексный финансовый анализ хозяйственно-коммерческой деятельности",
-      result: `Получишь конкретные рекомендации
+    result: `Получишь конкретные рекомендации
     - Как блокировать слабые звенья бизнеса
     - Как развить сильные стороны НЕЗАТРАТНЫМИ методами
     - Мы определим точки роста и развития вашего бизнеса
@@ -59,49 +23,70 @@ export const services = {
 
     кнопка ПОДРОБНЕЕ (просто развернуть текст) выбрать из текста внизу - Кате
     `,
-    },
-    {
-      sevice: "Бизнес-моделирование, прогнозирование и анализ",
-      desc: `• Разработка и обновление бизнес-плана
+  },
+  {
+    title: "Бизнес-моделирование, прогнозирование и анализ",
+    price: "50,000 руб",
+    desc: `• Разработка и обновление бизнес-плана
     • Моделирование нового бизнеса ( стартап ) или продукта.
     • Создание финансовой модели и анализ чувствительности
     • Бюджеты и сметы тактических операций
     • Сопровождение
     `,
-      result: `Внедрим пошагово все разработанные рекомендации
-      Измерим прогресс в поставленные сроки, 
-      используя показатели, 
-      разработанные с учетом потребностей вашей компании.
-     `,
-    },
-    {
-      sevice: "Управление денежными средствами и анализ денежных потоков",
-      desc: "Вы не понимаете куда уходят ваши деньги?",
-      result: `Мы поможем разобраться и научим управлять Вас 
-      денежными потоками вашего бизнеса.
-      • Сделаем Анализ денежных потоков
-      • Научим Управлять денежными средствами Вас и вашего фин директора
-      • покажем, как избежать кассовых разрывов
-       • Снизим  комиссии и расходы
-      • Внедрим Оптимизацию и инструменты для повышения эффективности
-      Кнопка ПОДРОБНЕЕ
-      В каждой компании есть 3 источника денежных средств:
-      Операционная деятельность, Инвестиционная и Финансовая .
-      Первая - всем понятная . 
-      Вторая - на что тратятся приходящие средства
-      Третья - как привлекаются новые вливания.
-       Актуальный вопрос для развивающихся компаний. Можно ли обойтись своими средствами? Нужно ли привлекать чужой капиталл? Брать кредиты?
-      На все эти вопросы вы найдёте ответы, заказав эту услугу.
-      Кнопка ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ
-      `,
-    },
-    {
-      sevice: "Планирование увеличения прибыли",
-      desc: `У вас нет конкурентов? Вы понимаете, что клиент готов платить за ваш товар больше?
+    path: "/homes",
+    label: "Подробнее",
+    image: Image2,
+    alt: "Консалт",
+    sayThanks: `Photo by <a href="https://unsplash.com/@naomi365photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">vu anh</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    `,
+    result: `Внедрим пошагово все разработанные рекомендации
+    Измерим прогресс в поставленные сроки, 
+    используя показатели, 
+    разработанные с учетом потребностей вашей компании.
+   `,
+  },
+  {
+    title: "Управление денежными средствами и анализ денежных потоков",
+    price: "50,000 руб",
+    desc: "Вы не понимаете куда уходят ваши деньги?",
+    path: "/homes",
+    label: "Подробнее",
+    image: Image3,
+    alt: "Окей анализ",
+    sayThanks: `Photo by <a href="https://unsplash.com/@heybeautimagazine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nicola Styles</a> on <a href="https://unsplash.com/s/photos/okay?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    `,
+    result: `Мы поможем разобраться и научим управлять Вас 
+    денежными потоками вашего бизнеса.
+    • Сделаем Анализ денежных потоков
+    • Научим Управлять денежными средствами Вас и вашего фин директора
+    • покажем, как избежать кассовых разрывов
+     • Снизим  комиссии и расходы
+    • Внедрим Оптимизацию и инструменты для повышения эффективности
+    Кнопка ПОДРОБНЕЕ
+    В каждой компании есть 3 источника денежных средств:
+    Операционная деятельность, Инвестиционная и Финансовая .
+    Первая - всем понятная . 
+    Вторая - на что тратятся приходящие средства
+    Третья - как привлекаются новые вливания.
+     Актуальный вопрос для развивающихся компаний. Можно ли обойтись своими средствами? Нужно ли привлекать чужой капиталл? Брать кредиты?
+    На все эти вопросы вы найдёте ответы, заказав эту услугу.
+    Кнопка ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ
+    `,
+  },
+  {
+    title: "Планирование увеличения прибыли",
+    price: "50,000 руб",
+    desc: `У вас нет конкурентов? Вы понимаете, что клиент готов платить за ваш товар больше?
     Качество ваших услуг/товара заслуживает большей оплаты?
     Хотите делать меньше, а получать больше?
     `,
-      result: `Пора сделать 
+    path: "/homes",
+    label: "Подробнее",
+    image: Image4,
+    alt: "Финансовый рост",
+    sayThanks: `Photo by <a href="https://unsplash.com/@micheile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Micheile Henderson</a> on <a href="https://unsplash.com/s/photos/finance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    `,
+    result: `Пора сделать 
     • Анализ цен
     • Программы сокращения расходов
     • Анализ поставщиков и переговоры
@@ -109,24 +94,30 @@ export const services = {
     • Моделирование альтернативных сценариев и анализ чувствительности
     кнопка ЗАКАЗАТЬ УСЛУГУ
     `,
-    },
-    {
-      sevice: "Коучинг личностного роста руководителя и команды",
-      desc: `Коучинг топ менеджеров .Развитие персонала. Сплочение команды
-      Все статистические данные и сухие инструменты маркетинга на увеличение прибыли вряд ли сработают, если в голове руководителя каша.`,
-      result: `Поэтому параллельно мы проводим
-      1. индивидуальный коучинг руководителей;
-      2. групповой коучинг для постановки личных целей роста каждого в рамках работы в компании /или для решения конкретной проблемы
-      • Выстраиваем личные цели на заданный период жизни
-      • Гармонизируем сферы развития  
-      • Расширение сознания. 
-      • Внедрение новых взглядов, убеждений. 
-       • Безболезненная  интеграция в  общество следующего ранга
-      Кнопка ВЫБРАТЬ ДАТУ ДЛЯ первой КОНСУЛЬТАЦИИ -ПЕРЕХОД - что  будет и выбор даты
-      `,
-    },
-  ],
-};
+  },
+  {
+    title: "Коучинг личностного роста руководителя и команды",
+    price: "50,000 руб",
+    desc: `Коучинг топ менеджеров .Развитие персонала. Сплочение команды
+    Все статистические данные и сухие инструменты маркетинга на увеличение прибыли вряд ли сработают, если в голове руководителя каша.`,
+    path: "/homes",
+    label: "Подробнее",
+    image: Image5,
+    alt: "Финансовый рост",
+    sayThanks: `Photo by <a href="https://unsplash.com/@micheile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Micheile Henderson</a> on <a href="https://unsplash.com/s/photos/finance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    `,
+    result: `Поэтому параллельно мы проводим
+    1. индивидуальный коучинг руководителей;
+    2. групповой коучинг для постановки личных целей роста каждого в рамках работы в компании /или для решения конкретной проблемы
+    • Выстраиваем личные цели на заданный период жизни
+    • Гармонизируем сферы развития  
+    • Расширение сознания. 
+    • Внедрение новых взглядов, убеждений. 
+     • Безболезненная  интеграция в  общество следующего ранга
+    Кнопка ВЫБРАТЬ ДАТУ ДЛЯ первой КОНСУЛЬТАЦИИ -ПЕРЕХОД - что  будет и выбор даты
+    `,
+  },
+];
 
 const forReklam = `
 это доп инфа для рекламы
