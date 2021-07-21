@@ -77,7 +77,7 @@ const AboutCompany = () => {
           >
             {aboutCompanyData.text[lang]}
           </motion.div>
-          <Button primary="true" to={"/homes"}>
+          <Button primary={true} href={"/#contacts"}>
             Связаться с нами
           </Button>
         </ColumnRight>

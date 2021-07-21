@@ -2,13 +2,14 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./GlobalStyle";
 
-import { EN } from "./constants";
+import Header from "./sections/Header";
 import Home from "./pages/Home";
 import ResumePage from "./pages/ResumePage";
 import ServicesPage from "./pages/ServicesPage";
 import NotFound from "./pages/NotFound";
-import Header from "./sections/Header";
+import Footer from "./sections/Footer";
 
+import { EN } from "./constants";
 import { teamData } from "./data/teamData";
 
 export const LangContext = React.createContext();
@@ -41,6 +42,7 @@ function App() {
           <Route path="*" component={NotFound} />
         </Switch>
       </main>
+      <Footer lang={lang} />
     </LangContext.Provider>
   );
 }
