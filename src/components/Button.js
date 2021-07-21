@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { ACCENT_COLOR } from "../constants";
 
-export const Button = styled(Link)`
+export const Button = styled.a`
   background: ${({ primary }) => (primary ? "#000d1a" : ACCENT_COLOR)};
   font-weight: 700;
   white-space: nowrap;

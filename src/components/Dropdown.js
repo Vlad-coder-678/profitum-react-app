@@ -15,8 +15,8 @@ const DropdownContainer = styled.div`
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   left: 0;
   width: 100%;
-  height: 100%;
-  display: grid;
+  height: 100vh;
+  display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
   align-items: center;
   background: #cd853f;
   transition: 0.3s ease-in-out;

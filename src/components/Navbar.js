@@ -1,45 +1,21 @@
 import React from "react";
-// import { Link as ScrollLink } from 'react-scroll';
 import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
-import { menuData } from "../data/headerData";
-import { contactUsBtn } from "../data/buttons";
+
 import { LangContext } from "../App";
 import { Button } from "./Button";
-import Bars from "../images/bars.svg";
-import logo from "../images/logo_header.png";
 import LangSelect from "./LangSelect";
+import Logo from "../components/Logo";
+import NavMenu from "../components/NavMenu";
+
+import { contactUsBtn } from "../data/buttons";
+import Bars from "../images/bars.svg";
 
 const Nav = styled.nav`
-  height: 70px;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  z-index: 100;
-  position: fixed;
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.35) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-`;
-
-const Logo = styled(Link)`
-  position: relative;
-  width: 200px;
-  height: 40px;
-`;
-
-const LogoImg = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `;
 
 const MenuBars = styled.i`
@@ -58,29 +34,10 @@ const MenuBars = styled.i`
   }
 `;
 
-const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -48px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  text-decoration: none;
-`;
-
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 1rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -97,30 +54,11 @@ const Navbar = ({ toggle, setLang }) => {
 
   return (
     <Nav>
-      <Logo to={"/"}>
-        <LogoImg src={logo} alt={"logo"} />
-      </Logo>
       <MenuBars onClick={toggle} />
-      <NavMenu>
-        {/* {menuData.map((item) => (
-          <ScrollLink
-            key={item.link}
-            activeClass="active"
-            to={item.link}
-            spy={true}
-            smooth={true}
-          >
-            <NavMenuLinks>{item.title[lang]}</NavMenuLinks>
-          </ScrollLink>
-        ))} */}
-        {menuData.map((item) => (
-          <NavLink key={item.link} href={item.link}>
-            {item.title[lang]}
-          </NavLink>
-        ))}
-      </NavMenu>
+      <Logo />
+      <NavMenu lang={lang} />
       <NavBtn>
-        <Button to="/contact"> {contactUsBtn[lang]}</Button>
+        <Button href="/#contacts">{contactUsBtn[lang]}</Button>
       </NavBtn>
       <Languages>
         <LangSelect setLang={setLang} lang={lang} />
