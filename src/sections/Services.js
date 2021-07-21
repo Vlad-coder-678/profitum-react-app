@@ -180,13 +180,13 @@ const Services = () => {
                 <ServicesContent>
                   <h1>{slide.title}</h1>
                   <Button
-                    to={slide.path}
-                    primary="true"
+                    to={slide.pathHomePage}
+                    primary={true}
                     css={`
                       max-width: 160px;
                     `}
                   >
-                    {slide.label}
+                    {slide.labelHomePage}
                     <Arrow />
                   </Button>
                 </ServicesContent>
