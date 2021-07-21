@@ -9,7 +9,7 @@ import { LangContext } from "../App";
 const SectionAbout = styled.section``;
 
 const Container = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 4rem 1rem 0.5rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   @media screen and (max-width: 768px) {

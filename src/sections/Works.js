@@ -5,7 +5,7 @@ import { worksData } from "../data/worksData";
 import { SECTION_BG_COLOR } from "../constants";
 
 const SectionWorks = styled.section`
-  padding: 1rem 2rem;
+  padding: 4rem 2rem 1rem;
   position: relative;
   background-color: ${SECTION_BG_COLOR};
 `;

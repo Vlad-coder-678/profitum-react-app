@@ -37,7 +37,7 @@ function App() {
               render={() => <ResumePage employee={item} />}
             />
           ))}
-          <Route path="/servicesPage" component={ServicesPage} />
+          <Route path="/services" component={ServicesPage} />
           <Route path="*" component={NotFound} />
         </Switch>
       </main>

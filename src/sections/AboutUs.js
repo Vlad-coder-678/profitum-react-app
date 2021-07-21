@@ -7,7 +7,7 @@ import { teamData } from "../data/teamData";
 import CardOfEmployee from "../components/CardOfEmployee";
 
 const SectionAboutUs = styled.section`
-  padding: 1rem 2rem;
+  padding: 4rem 2rem 1rem;
   position: relative;
 
   @media screen and (max-width: 768px) {
