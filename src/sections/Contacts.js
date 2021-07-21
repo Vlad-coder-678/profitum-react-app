@@ -4,7 +4,7 @@ import { LangContext } from "../App";
 import { contactsData } from "../data/contactsData";
 
 const SectionContacts = styled.section`
-  padding: 1rem 2rem;
+  padding: 4rem 2rem 1rem;
   position: relative;
 `;
 

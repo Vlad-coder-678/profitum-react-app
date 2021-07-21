@@ -1,17 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Button } from "../components/Button";
-import ScrollToTop from "../components/ScrollToTop";
-import CardOfEmployee from "../components/CardOfEmployee";
-import ResumeSection from "../components/ResumeSection";
-import ResumeDropdownSlider from "../components/ResumeDropdownSlider";
+import { Button } from '../components/Button';
+import ScrollToTop from '../components/ScrollToTop';
+import CardOfEmployee from '../components/CardOfEmployee';
+import ResumeSection from '../components/ResumeSection';
+import ResumeDropdownSlider from '../components/ResumeDropdownSlider';
 
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from 'react-icons/fa';
+import { ACCENT_COLOR, SECTION_BG_COLOR } from '../constants';
 
 const ResumeContainer = styled.div`
   position: relative;
-  background: rgba(0, 0, 0, 0.1);
+  background: ${SECTION_BG_COLOR};
   transition: 0.3s ease-in-out;
   display: flex;
   justify-content: center;

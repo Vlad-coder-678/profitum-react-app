@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Button } from "../components/Button";
+import { Button } from '../components/Button';
 
-import { servicesData } from "../data/servicesData";
-import { ACCENT_COLOR } from "../constants";
+import { servicesData } from '../data/servicesData';
+import { ACCENT_COLOR, SECTION_BG_COLOR } from '../constants';
 
 const WrapperPage = styled.div`
   width: 100%;
@@ -13,9 +13,12 @@ const WrapperPage = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: 4rem;
-  background-color: #ddd;
+  background-color: ${SECTION_BG_COLOR};
   overflow: hidden;
+`;
+
+const WrapperCard = styled.div`
+  padding: 4.5rem 2rem 1rem;
 `;
 
 const Card = styled.div`
@@ -24,7 +27,6 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  margin: 1rem 2rem;
   position: relative;
   box-shadow: 5px 5px 0px 0px ${ACCENT_COLOR};
 
@@ -148,37 +150,39 @@ const WrapperButton = styled.div`
 
 const ServicesPage = () => {
   return (
-    <WrapperPage id={"servicesPage"}>
+    <WrapperPage>
       {servicesData.map((item, index) => {
         return (
-          <Card key={index} id={item.idCard}>
-            <CardTop>
-              <TopContent>
-                <ItemDesc>{item.desc}</ItemDesc>
-              </TopContent>
-              <TopImage>
-                <WrapperImgManager>
-                  <img src={item.manager.image} alt={item.manager.alt} />
-                </WrapperImgManager>
-              </TopImage>
-            </CardTop>
-            <CardTitle>{item.title}</CardTitle>
-            <CardBottom>
-              <BottomImage>
-                <WrapperImgService>
-                  <img src={item.image} alt={item.alt} />
-                </WrapperImgService>
-              </BottomImage>
-              <BottomContent>
-                <ItemResult>{item.result}</ItemResult>
-              </BottomContent>
-            </CardBottom>
-            <WrapperButton>
-              <Button primary={true} big={false}>
-                {item.labelServicesPage}
-              </Button>
-            </WrapperButton>
-          </Card>
+          <WrapperCard key={index} id={item.idCard}>
+            <Card>
+              <CardTop>
+                <TopContent>
+                  <ItemDesc>{item.desc}</ItemDesc>
+                </TopContent>
+                <TopImage>
+                  <WrapperImgManager>
+                    <img src={item.manager.image} alt={item.manager.alt} />
+                  </WrapperImgManager>
+                </TopImage>
+              </CardTop>
+              <CardTitle>{item.title}</CardTitle>
+              <CardBottom>
+                <BottomImage>
+                  <WrapperImgService>
+                    <img src={item.image} alt={item.alt} />
+                  </WrapperImgService>
+                </BottomImage>
+                <BottomContent>
+                  <ItemResult>{item.result}</ItemResult>
+                </BottomContent>
+              </CardBottom>
+              <WrapperButton>
+                <Button primary={true} big={false}>
+                  {item.labelServicesPage}
+                </Button>
+              </WrapperButton>
+            </Card>
+          </WrapperCard>
         );
       })}
     </WrapperPage>
