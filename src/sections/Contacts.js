@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+
 import { LangContext } from "../App";
 import { contactsData } from "../data/contactsData";
+import { Button } from "../components/Button";
 
 const SectionContacts = styled.section`
   padding: 4rem 2rem 1rem;
@@ -24,6 +26,11 @@ const Content = styled.div`
   }
 `;
 
+const WrapperButton = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Contacts = () => {
   const lang = React.useContext(LangContext);
 
@@ -31,6 +38,15 @@ const Contacts = () => {
     <SectionContacts id="contacts">
       <Title>Контакты:</Title>
       <Content>{contactsData[lang]}</Content>
+      <WrapperButton>
+        <Button
+          primary={true}
+          big={false}
+          href={"https://calendly.com/profitumLtd"}
+        >
+          Заполнить форму
+        </Button>
+      </WrapperButton>
     </SectionContacts>
   );
 };

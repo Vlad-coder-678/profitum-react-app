@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Button } from '../components/Button';
-import ScrollToTop from '../components/ScrollToTop';
-import CardOfEmployee from '../components/CardOfEmployee';
-import ResumeSection from '../components/ResumeSection';
-import ResumeDropdownSlider from '../components/ResumeDropdownSlider';
+import { Button } from "../components/Button";
+import ScrollToTop from "../components/ScrollToTop";
+import CardOfEmployee from "../components/CardOfEmployee";
+import ResumeSection from "../components/ResumeSection";
+import ResumeDropdownSlider from "../components/ResumeDropdownSlider";
 
-import { FaTimes } from 'react-icons/fa';
-import { ACCENT_COLOR, SECTION_BG_COLOR } from '../constants';
+import { FaTimes } from "react-icons/fa";
+import { SECTION_BG_COLOR } from "../constants";
 
 const ResumeContainer = styled.div`
   position: relative;

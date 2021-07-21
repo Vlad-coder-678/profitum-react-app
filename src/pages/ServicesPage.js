@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Button } from '../components/Button';
+import { Button } from "../components/Button";
 
-import { servicesData } from '../data/servicesData';
-import { ACCENT_COLOR, SECTION_BG_COLOR } from '../constants';
+import { servicesData } from "../data/servicesData";
+import { ACCENT_COLOR, SECTION_BG_COLOR } from "../constants";
 
 const WrapperPage = styled.div`
   width: 100%;
@@ -18,47 +18,48 @@ const WrapperPage = styled.div`
 `;
 
 const WrapperCard = styled.div`
+  width: 80%;
   padding: 4.5rem 2rem 1rem;
 `;
 
 const Card = styled.div`
-  width: 85%;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  position: relative;
-  box-shadow: 5px 5px 0px 0px ${ACCENT_COLOR};
-
-  &:nth-child(2n-1) {
-    align-self: flex-end;
-  }
-  &:nth-child(2n) {
-    align-self: flex-start;
-  }
-`;
-
-const CardTop = styled.div`
-  order: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const TopContent = styled.div`
-  order: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 5px 5px 0px 0px ${ACCENT_COLOR};
 `;
 
-const ItemDesc = styled.p`
+const CardTop = styled.div`
+  order: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    order: 2;
+  }
+`;
+
+const TopContent = styled.div`
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    order: 2;
+  }
+`;
+
+const ItemDesc = styled.div`
   text-align: start;
   ul {
     margin: 0.5rem 1rem;
@@ -66,7 +67,10 @@ const ItemDesc = styled.p`
 `;
 
 const TopImage = styled.div`
-  order: 1;
+  order: 2;
+  @media screen and (max-width: 768px) {
+    order: 1;
+  }
 `;
 
 const WrapperImgManager = styled.div`
@@ -82,13 +86,14 @@ const WrapperImgManager = styled.div`
 `;
 
 const CardTitle = styled.h2`
-  order: 1;
+  order: 2;
   text-align: center;
   margin: 1rem 0.5rem;
   font-size: 2rem;
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
+    order: 1;
   }
 `;
 
@@ -177,7 +182,11 @@ const ServicesPage = () => {
                 </BottomContent>
               </CardBottom>
               <WrapperButton>
-                <Button primary={true} big={false}>
+                <Button
+                  primary={true}
+                  big={false}
+                  href={"https://calendly.com/profitumLtd"}
+                >
                   {item.labelServicesPage}
                 </Button>
               </WrapperButton>

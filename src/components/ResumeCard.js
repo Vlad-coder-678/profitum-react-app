@@ -10,13 +10,14 @@ const CardResume = styled.div`
   text-align: start;
   padding: 1rem 1.5rem;
   align-self: start;
-  cursor: pointer;
+  cursor: ${({ isHover }) => (isHover ? "pointer" : `default`)};
   transition: 0.3s ease-in-out;
   box-shadow: 5px 5px 0px 0px ${ACCENT_COLOR};
 
   &:hover {
     transition: 0.3s ease-in-out;
-    box-shadow: 5px 5px 0px 0px #000;
+    box-shadow: ${({ isHover }) =>
+      isHover ? "5px 5px 0px 0px #000" : `5px 5px 0px 0px ${ACCENT_COLOR}`};
   }
 
   @media screen and (max-width: 768px) {
@@ -85,7 +86,7 @@ const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt }) => {
   };
 
   return (
-    <CardResume>
+    <CardResume isHover={!!resumeOfEmployee.content[0].doc}>
       <Title>{resumeOfEmployee.title}</Title>
       {resumeOfEmployee.content.map((item, index) => (
         <WrapContent key={index}>
@@ -93,11 +94,11 @@ const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt }) => {
           <WrapDate>{item.date}</WrapDate>
           <WrapVoc>{item.vocation}</WrapVoc>
           <WrapDesc>{item.desc}</WrapDesc>
-          {item.doc ? (
+          {item.doc && (
             <WrapDoc onClick={handleclick}>
               <img src={item.doc} alt={item.alt} />
             </WrapDoc>
-          ) : null}
+          )}
         </WrapContent>
       ))}
     </CardResume>
