@@ -20,6 +20,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  user-select: text;
 
   @media screen and (max-width: 500px) {
     text-align: center;
@@ -29,6 +30,7 @@ const Content = styled.div`
 const WrapperButton = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 `;
 
 const Contacts = () => {

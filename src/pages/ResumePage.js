@@ -34,7 +34,7 @@ const Icon = styled.div`
   font-size: 2rem;
   cursor: pointer;
   outline: none;
-  z-index: 100;
+  z-index: 99;
 `;
 
 const ArrowBackIcon = styled(FaTimes)`

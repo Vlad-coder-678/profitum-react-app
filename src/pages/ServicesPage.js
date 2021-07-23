@@ -20,6 +20,11 @@ const WrapperPage = styled.div`
 const WrapperCard = styled.div`
   width: 80%;
   padding: 4.5rem 2rem 1rem;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 4rem 0.5rem;
+  }
 `;
 
 const Card = styled.div`
