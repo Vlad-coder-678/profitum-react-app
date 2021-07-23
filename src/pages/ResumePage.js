@@ -7,6 +7,8 @@ import AvatarEmployee from "../components/AvatarEmployee";
 import ResumeSection from "../components/ResumeSection";
 import ResumeDropdownSlider from "../components/ResumeDropdownSlider";
 
+import { ACCENT_COLOR } from "../constants";
+
 import { FaTimes } from "react-icons/fa";
 import { SECTION_BG_COLOR } from "../constants";
 import { LangContext } from "../App";
@@ -43,7 +45,7 @@ const ArrowBackIcon = styled(FaTimes)`
   height: 50px;
   color: #000d1a;
   cursor: pointer;
-  background: #cd853f;
+  background: ${ACCENT_COLOR};
   border-radius: 50px;
   padding: 10px;
   user-selected: none;

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { ACCENT_COLOR } from "../constants";
+
 import { FaTimes } from "react-icons/fa";
 
 const WrapperDropdown = styled.div`
@@ -34,7 +36,7 @@ const ArrowBackIcon = styled(FaTimes)`
   height: 50px;
   color: #000d1a;
   cursor: pointer;
-  background: #cd853f;
+  background-color: ${ACCENT_COLOR};
   border-radius: 50px;
   padding: 10px;
   user-selected: none;

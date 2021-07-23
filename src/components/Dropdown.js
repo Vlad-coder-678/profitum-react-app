@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { menuData } from "../data/headerData";
 import { contactUsBtn } from "../data/buttons";
+import { ACCENT_COLOR } from "../constants";
 
 import { LangContext } from "../App";
 import { Button } from "./Button";
@@ -18,7 +19,7 @@ const DropdownContainer = styled.div`
   height: 100vh;
   display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
   align-items: center;
-  background: #cd853f;
+  background: ${ACCENT_COLOR};
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
   z-index: 999;
