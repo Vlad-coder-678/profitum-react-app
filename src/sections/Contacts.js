@@ -38,15 +38,15 @@ const Contacts = () => {
 
   return (
     <SectionContacts id="contacts">
-      <Title>Контакты:</Title>
-      <Content>{contactsData[lang]}</Content>
+      <Title>{contactsData.title[lang]}</Title>
+      <Content>{contactsData.content[lang]}</Content>
       <WrapperButton>
         <Button
           primary={true}
           big={false}
           href={"https://calendly.com/profitumLtd"}
         >
-          Заполнить форму
+          {contactsData.labelButton[lang]}
         </Button>
       </WrapperButton>
     </SectionContacts>

@@ -3,6 +3,7 @@ import styled, { css } from "styled-components/macro";
 
 import { servicesData } from "../data/servicesData";
 import { Button } from "../components/Button";
+import { LangContext } from "../App";
 
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
@@ -133,6 +134,7 @@ const NextArrow = styled(IoArrowForward)`
 
 const Services = () => {
   const [curr, setCurr] = useState(0);
+  const lang = React.useContext(LangContext);
   const length = servicesData.length;
   const timeout = useRef(null);
 
@@ -175,11 +177,11 @@ const Services = () => {
           <ServicesSlide key={index}>
             {index === curr && (
               <ServicesSlider>
-                <ServicesImage src={slide.image} alt={slide.alt} />
+                <ServicesImage src={slide.image} alt={slide.alt[lang]} />
                 <ServicesContent>
-                  <h1>{slide.title}</h1>
+                  <h1>{slide.title[lang]}</h1>
                   <Button href={slide.pathHomePage}>
-                    {slide.labelHomePage}
+                    {slide.labelHomePage[lang]}
                     <Arrow />
                   </Button>
                 </ServicesContent>

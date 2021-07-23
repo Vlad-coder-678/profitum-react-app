@@ -5,6 +5,7 @@ import { Button } from "../components/Button";
 
 import { servicesData } from "../data/servicesData";
 import { ACCENT_COLOR, SECTION_BG_COLOR } from "../constants";
+import { LangContext } from "../App";
 
 const WrapperPage = styled.div`
   width: 100%;
@@ -19,7 +20,7 @@ const WrapperPage = styled.div`
 
 const WrapperCard = styled.div`
   width: 80%;
-  padding: 4.5rem 2rem 1rem;
+  padding: 4rem 2rem 1rem;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -159,6 +160,8 @@ const WrapperButton = styled.div`
 `;
 
 const ServicesPage = () => {
+  const lang = React.useContext(LangContext);
+
   return (
     <WrapperPage>
       {servicesData.map((item, index) => {
@@ -167,23 +170,26 @@ const ServicesPage = () => {
             <Card>
               <CardTop>
                 <TopContent>
-                  <ItemDesc>{item.desc}</ItemDesc>
+                  <ItemDesc>{item.desc[lang]}</ItemDesc>
                 </TopContent>
                 <TopImage>
                   <WrapperImgManager>
-                    <img src={item.manager.image} alt={item.manager.alt} />
+                    <img
+                      src={item.manager.image}
+                      alt={item.manager.alt[lang]}
+                    />
                   </WrapperImgManager>
                 </TopImage>
               </CardTop>
-              <CardTitle>{item.title}</CardTitle>
+              <CardTitle>{item.title[lang]}</CardTitle>
               <CardBottom>
                 <BottomImage>
                   <WrapperImgService>
-                    <img src={item.image} alt={item.alt} />
+                    <img src={item.image} alt={item.alt[lang]} />
                   </WrapperImgService>
                 </BottomImage>
                 <BottomContent>
-                  <ItemResult>{item.result}</ItemResult>
+                  <ItemResult>{item.result[lang]}</ItemResult>
                 </BottomContent>
               </CardBottom>
               <WrapperButton>
@@ -192,7 +198,7 @@ const ServicesPage = () => {
                   big={false}
                   href={"https://calendly.com/profitumLtd"}
                 >
-                  {item.labelServicesPage}
+                  {item.labelServicesPage[lang]}
                 </Button>
               </WrapperButton>
             </Card>

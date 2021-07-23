@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 2rem;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -48,7 +49,13 @@ const ContentRight = styled.div`
   flex-direction: column;
 `;
 
-const ResumeSection = ({ resume, toggle, setNeededDoc, setNeededAlt }) => {
+const ResumeSection = ({
+  resume,
+  toggle,
+  setNeededDoc,
+  setNeededAlt,
+  lang,
+}) => {
   const leftContent = [];
   const rightContent = [];
 
@@ -71,6 +78,7 @@ const ResumeSection = ({ resume, toggle, setNeededDoc, setNeededAlt }) => {
               toggle={toggle}
               setDoc={setNeededDoc}
               setAlt={setNeededAlt}
+              lang={lang}
             />
           ))}
         </ContentLeft>
@@ -82,6 +90,7 @@ const ResumeSection = ({ resume, toggle, setNeededDoc, setNeededAlt }) => {
               toggle={toggle}
               setDoc={setNeededDoc}
               setAlt={setNeededAlt}
+              lang={lang}
             />
           ))}
         </ContentRight>
@@ -95,6 +104,7 @@ const ResumeSection = ({ resume, toggle, setNeededDoc, setNeededAlt }) => {
               toggle={toggle}
               setDoc={setNeededDoc}
               setAlt={setNeededAlt}
+              lang={lang}
             />
           ))}
         </Content>

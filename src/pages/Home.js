@@ -1,7 +1,8 @@
 import React from "react";
+
 import Services from "../sections/Services";
 import AboutCompany from "../sections/AboutCompany";
-import AboutUs from "../sections/AboutUs";
+import OurTeam from "../sections/OurTeam";
 import Advantages from "../sections/Advantages";
 import Works from "../sections/Works";
 import Contacts from "../sections/Contacts";
@@ -12,7 +13,7 @@ const Home = () => {
       <Services />
       <AboutCompany />
       <Advantages />
-      <AboutUs />
+      <OurTeam />
       <Works />
       <Contacts />
     </>

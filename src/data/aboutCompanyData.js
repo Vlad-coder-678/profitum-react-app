@@ -127,4 +127,5 @@ export const aboutCompanyData = {
       </div>
     ),
   },
+  labelButton: { RU: "Связаться с нами", EN: "Contact Us" },
 };

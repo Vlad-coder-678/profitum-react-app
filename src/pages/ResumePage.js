@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 import { Button } from "../components/Button";
 import ScrollToTop from "../components/ScrollToTop";
-import CardOfEmployee from "../components/CardOfEmployee";
+import AvatarEmployee from "../components/AvatarEmployee";
 import ResumeSection from "../components/ResumeSection";
 import ResumeDropdownSlider from "../components/ResumeDropdownSlider";
 
 import { FaTimes } from "react-icons/fa";
 import { SECTION_BG_COLOR } from "../constants";
+import { LangContext } from "../App";
 
 const ResumeContainer = styled.div`
   position: relative;
@@ -90,6 +91,7 @@ const ResumePage = ({ employee }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [doc, setDoc] = React.useState(null);
   const [alt, setAlt] = React.useState(null);
+  const lang = React.useContext(LangContext);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -110,9 +112,9 @@ const ResumePage = ({ employee }) => {
         </Icon>
       </a>
       <ContentLeft>
-        <CardOfEmployee employee={employee} isHover={false} />
+        <AvatarEmployee employee={employee} isHover={false} lang={lang} />
         <Button primary="true" to="./contact">
-          Contact Us
+          {employee.labelButton[lang]}
         </Button>
       </ContentLeft>
       <ContentRight>
@@ -121,6 +123,7 @@ const ResumePage = ({ employee }) => {
           toggle={toggle}
           setNeededDoc={setNeededDoc}
           setNeededAlt={setNeededAlt}
+          lang={lang}
         />
       </ContentRight>
       <ResumeDropdownSlider

@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { ACCENT_COLOR } from '../constants';
+import { ACCENT_COLOR } from "../constants";
 
-const CardWrapper = styled.div`
+const AvaWrapper = styled.div`
   width: 100%;
   max-width: 250px;
   text-align: center;
   position: relative;
   margin: 1rem 2rem;
-  cursor: ${({ isHover }) => (isHover ? 'pointer' : 'default')};
+  cursor: ${({ isHover }) => (isHover ? "pointer" : "default")};
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -30,11 +30,11 @@ const CardWrapper = styled.div`
       color: ${ACCENT_COLOR};
     }
     `
-        : 'transition: 0.3s ease-in-out;'}
+        : "transition: 0.3s ease-in-out;"}
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -45,7 +45,7 @@ const CardWrapper = styled.div`
   }
 `;
 
-const CardEmployee = styled.div`
+const AvaEmployee = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,18 +83,18 @@ const WrapImg = styled.div`
   }
 `;
 
-const CardOfEmployee = ({ employee, isHover }) => {
+const AvatarEmployee = ({ employee, isHover, lang }) => {
   return (
-    <CardWrapper isHover={isHover}>
-      <CardEmployee>
+    <AvaWrapper isHover={isHover}>
+      <AvaEmployee>
         <WrapImg>
-          <img src={employee.imageSection} alt={employee.desc} />
+          <img src={employee.imageSection} alt={employee.desc[lang]} />
         </WrapImg>
-        <h3>{employee.title}</h3>
-        <p>{employee.desc}</p>
-      </CardEmployee>
-    </CardWrapper>
+        <h3>{employee.title[lang]}</h3>
+        <p>{employee.desc[lang]}</p>
+      </AvaEmployee>
+    </AvaWrapper>
   );
 };
 
-export default CardOfEmployee;
+export default AvatarEmployee;

@@ -78,7 +78,7 @@ const WrapDoc = styled.div`
   }
 `;
 
-const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt }) => {
+const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt, lang }) => {
   const handleclick = (event) => {
     setDoc(event.target.src);
     setAlt(event.target.alt);
@@ -87,13 +87,13 @@ const ResumeCard = ({ resumeOfEmployee, toggle, setDoc, setAlt }) => {
 
   return (
     <CardResume isHover={!!resumeOfEmployee.content[0].doc}>
-      <Title>{resumeOfEmployee.title}</Title>
+      <Title>{resumeOfEmployee.title[lang]}</Title>
       {resumeOfEmployee.content.map((item, index) => (
         <WrapContent key={index}>
-          <WrapLoc>{item.location}</WrapLoc>
-          <WrapDate>{item.date}</WrapDate>
-          <WrapVoc>{item.vocation}</WrapVoc>
-          <WrapDesc>{item.desc}</WrapDesc>
+          <WrapLoc>{item.location[lang]}</WrapLoc>
+          <WrapDate>{item.date[lang]}</WrapDate>
+          <WrapVoc>{item.vocation[lang]}</WrapVoc>
+          <WrapDesc>{item.desc[lang]}</WrapDesc>
           {item.doc && (
             <WrapDoc onClick={handleclick}>
               <img src={item.doc} alt={item.alt} />

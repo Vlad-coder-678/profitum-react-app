@@ -5,6 +5,7 @@ import Logo from "../components/Logo";
 import NavMenu from "../components/NavMenu";
 
 import { ACCENT_COLOR } from "../constants";
+import { footerData } from "../data/footerData";
 
 const WrapperSection = styled.section`
   width: 100%;
@@ -36,7 +37,7 @@ const Footer = ({ lang }) => {
       <WrapperMenu>
         <NavMenu lang={lang} isPrimary={true} />
       </WrapperMenu>
-      <Regulations>правила сайта</Regulations>
+      <Regulations>{footerData.siteRules[lang]}</Regulations>
     </WrapperSection>
   );
 };

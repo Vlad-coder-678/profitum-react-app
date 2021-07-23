@@ -30,7 +30,7 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
-          {teamData.map((item) => (
+          {teamData.content.map((item) => (
             <Route
               key={item.route}
               exact

@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 import { teamData } from "../data/teamData";
 
-import CardOfEmployee from "../components/CardOfEmployee";
+import AvatarEmployee from "../components/AvatarEmployee";
+import { LangContext } from "../App";
 
-const SectionAboutUs = styled.section`
+const SectionOurTeam = styled.section`
   padding: 4rem 2rem 1rem;
   position: relative;
 
@@ -33,19 +34,21 @@ const Content = styled.div`
   }
 `;
 
-const AboutUs = () => {
+const OurTeam = () => {
+  const lang = React.useContext(LangContext);
+
   return (
-    <SectionAboutUs id="team">
-      <Title>Наша команда</Title>
+    <SectionOurTeam id="team">
+      <Title>{teamData.title[lang]}</Title>
       <Content>
-        {teamData.map((employee) => (
+        {teamData.content.map((employee) => (
           <NavLink key={employee.route} to={employee.route}>
-            <CardOfEmployee employee={employee} isHover={true} />
+            <AvatarEmployee employee={employee} isHover={true} lang={lang} />
           </NavLink>
         ))}
       </Content>
-    </SectionAboutUs>
+    </SectionOurTeam>
   );
 };
 
-export default AboutUs;
+export default OurTeam;

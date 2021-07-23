@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+
 import { LangContext } from "../App";
 import { advantagesData } from "../data/advantagesData";
 import AdvantagesItem from "../components/AdvantagesItem";
+
 import { SECTION_BG_COLOR } from "../constants";
 
 const SectionAdvantages = styled.section`
@@ -28,9 +30,9 @@ const Advantages = () => {
 
   return (
     <SectionAdvantages id="advantages">
-      <Title>Наши преимущества</Title>
+      <Title>{advantagesData.title[lang]}</Title>
       <Content>
-        {advantagesData.map((advantage, index) => (
+        {advantagesData.content.map((advantage, index) => (
           <AdvantagesItem
             key={index}
             img={advantage.img}

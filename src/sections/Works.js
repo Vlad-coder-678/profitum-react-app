@@ -43,9 +43,9 @@ const Works = () => {
 
   return (
     <SectionWorks id="works">
-      <Title>Мы работаем:</Title>
+      <Title>{worksData.title[lang]}</Title>
       <Content>
-        {worksData.map((item, index) => (
+        {worksData.content.map((item, index) => (
           <ContentItem key={index}>{item.text[lang]}</ContentItem>
         ))}
       </Content>

@@ -78,7 +78,7 @@ const AboutCompany = () => {
             {aboutCompanyData.text[lang]}
           </motion.div>
           <Button primary={true} href={"/#contacts"}>
-            Связаться с нами
+            {aboutCompanyData.labelButton[lang]}
           </Button>
         </ColumnRight>
       </Container>
